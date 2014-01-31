@@ -1,4 +1,3 @@
-tooltip = new Tooltip!
 obce = {}
 
 mapControl = L.map do
@@ -36,19 +35,26 @@ mapUnderLayer = L.tileLayer do
         attribution: 'mapová data &copy; přispěvatelé OpenStreetMap, obrazový podkres <a target="_blank" href="http://ihned.cz">IHNED.cz</a>'
 
 
+$obec =
+    nazev: $ ".obec .nazev"
+    pevna: $ ".obec .pevna"
+    drevo: $ ".obec .drevo"
+    uhli: $ ".obec .uhli"
+    plyn: $ ".obec .plyn"
+    elektrina: $ ".obec .elektrina"
+    nezjisteno: $ ".obec .nezjisteno"
+
+
 getGrid = (address) ->
     new L.UtfGrid "#srcPrefix/#address/{z}/{x}/{y}.json", useJsonP: no
         ..on \mouseover (e) ->
-            [obec, okrsek, zeman, schwarz] = e.data
-            total = zeman + schwarz
-            txt = "<b>#obec</b>, okrsek č. #okrsek<br />"
-            if total
-                txt += "Miloš Zeman: #{Math.round zeman / total * 100}% (#zeman hlasů)<br />"
-                txt += "Karel Schwarzenberg: #{Math.round schwarz / total * 100}% (#schwarz hlasů)"
-            else
-                txt += "V tomto okrsku nikdo nevolil"
-            tooltip.display txt
-        ..on \mouseout -> tooltip.hide!
+            sum = 0
+            for index in [1 til 7]
+                sum += e.data[index]
+            $obec.nazev.text e.data[0]
+            for field, index in <[pevna drevo uhli plyn elektrina nezjisteno]>
+                $obec[field].css \width "#{e.data[index + 1] / sum * 100}%"
+        # ..on \mouseout
 
 mapControl.addLayer getGrid "tiles"
 
@@ -95,8 +101,6 @@ maps =
         displayMap: yes
 
 $body = $ \body
-$ document .on \mouseout \#map ->
-    tooltip.hide!
 
 $ document .on \click '.selector li' ->
     $e = $ @

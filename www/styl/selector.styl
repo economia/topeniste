@@ -101,3 +101,49 @@
                 position relative
                 float left
                 margin 0px
+    div.obec
+        clear left
+        max-width 240px
+        padding-bottom 45px
+        &, *
+            box-sizing border-box
+        .nazev
+            display block
+            font-size 0.8em
+            padding-left 20px
+        .topeni
+            position absolute
+            width 100%
+            padding 0px 20px
+            margin-top 5px
+            div
+                float left
+                transition width 0.2s
+                height 30px
+                background red
+                &:hover
+                    cursor help
+                &:first-child
+                    border-top-left-radius 3px
+                    border-bottom-left-radius 3px
+                &:last-child
+                    border-top-right-radius 3px
+                    border-bottom-right-radius 3px
+            .pevna
+                background #b15928
+                box-shadow 0px 0px 5px #b15928
+            .drevo
+                background #fdbf6f
+                box-shadow 0px 0px 5px #fdbf6f
+            .uhli
+                background #ff7f00
+                box-shadow 0px 0px 5px #ff7f00
+            .plyn
+                background #1f78b4
+                box-shadow 0px 0px 5px #1f78b4
+            .elektrina
+                background #e31a1c
+                box-shadow 0px 0px 5px #e31a1c
+            .nezjisteno
+                background #888
+                box-shadow 0px 0px 5px #888
