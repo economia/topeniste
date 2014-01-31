@@ -1,0 +1,55 @@
+@import prefixes
+@import colors
+body
+    margin 0px
+    line-height 1.3em
+    font-family arial, sans-serif
+    #map
+        position absolute
+        top 0px
+        left 0px
+        bottom 0px
+        width 100%
+        background #fff
+        transition background 1.5s
+    .leaflet-container
+        background white
+
+    .tooltip
+        z-index 9000
+    .gradientContainer
+        position absolute
+        bottom 16px
+        left 0px
+        border 1px solid #333
+        z-index 999
+        background white
+        color #222
+        border-radius 3px
+        div
+            float left
+            width 120px
+            color white
+            padding-top 0px
+            height (20px - @padding-top)
+            text-align center
+            font-size 0.8em
+            font-weight bold
+            &.dark
+                color #FEE0D2
+        &.vitezove
+            display none
+    .search
+        @import search
+
+    .selector
+        @import "selector"
+
+    .partySelectorContainer
+        position absolute
+        top 15px
+        right 0px
+        width 158px
+        z-index 999
+        select
+            width 100%

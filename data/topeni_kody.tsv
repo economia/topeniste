@@ -1,0 +1,14 @@
+id	zpusob_vytapeni	palivo	zatez
+U119101501	kamna	uhlí, koks, uhelné brikety	1
+U119100901	etážové	uhlí, koks, uhelné brikety	1
+U119101601	kamna	dřevo, dřevěné brikety	1
+U119101001	etážové	dřevo, dřevěné brikety	1
+U119100501	ústřední	kotelna v domě: na pevná paliva	1
+U119101701	kamna	plyn	0
+U119101101	etážové	plyn	0
+U119100601	ústřední	kotelna v domě: na plyn	0
+X119100111	nezjištěn	nezjištěno	0
+U119101201	etážové	elektřina	0
+X119100101	etážové	nezjištěná energie	0
+U119101801	kamna	elektřina	0
+X119100106	kamna	nezjištěno	0
