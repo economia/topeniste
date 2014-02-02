@@ -3,7 +3,7 @@ obce = {}
 mapControl = L.map do
     *   'map'
     *   minZoom: 6,
-        maxZoom: 13,
+        maxZoom: 11,
         zoom: 8,
         center: [49.78, 15.5]
 $map = $ \#map
@@ -84,12 +84,6 @@ selectLayer = (map) ->
         mapControl.removeLayer mapUnderLayer
     currentLayer :=
         map: layer
-
-
-
-legend =
-    colors: <[#b35806 #542788]>
-    values: <[Zeman Schwarzenberg]>
 
 maps =
     *   name: "Mapa topenišť"
