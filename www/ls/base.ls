@@ -19,7 +19,7 @@ srcPrefix = "../data"
 getLayer = (address) ->
     L.tileLayer do
         *   "#srcPrefix/#address/{z}/{x}/{y}.png"
-        *   attribution: '<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cz/" target = "_blank">CC BY-NC-SA 3.0 CZ</a> <a target="_blank" href="http://ihned.cz">IHNED.cz</a>, data <a target="_blank" href="http://www.volby.cz">ČSÚ</a>'
+        *   attribution: '<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cz/" target = "_blank">CC BY-NC-SA 3.0 CZ</a> <a target="_blank" href="http://ihned.cz">IHNED.cz</a>, data <a target="_blank" href="http://www.czso.cz/">ČSÚ</a>'
             zIndex: 2
 
 mapLayer = L.tileLayer do
